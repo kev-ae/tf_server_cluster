@@ -137,3 +137,13 @@ data "aws_vpc" "default" {
 data "aws_subnet_ids" "default" {
   vpc_id = data.aws_vpc.default.id
 }
+
+data "terraform_remote_state" "db" {
+  backend = "s3"
+
+  config = {
+    bucket = "uartf-backend"
+    key = "stage/data-stores/mysql/terraform.tfstate"
+    region = "us-east-2"
+   }
+}
