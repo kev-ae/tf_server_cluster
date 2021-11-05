@@ -1,3 +1,13 @@
+# terraform {
+#   backend "s3" {
+#     key = "global/s3/terraform.tfstate"
+#     bucket = "uartf-backend"
+#     region = "us-east-2"
+#     encrypt = true
+#     dynamodb_table = "uartf-locks"
+#   }
+# }
+
 provider "aws" {
   region = "us-east-2"
 }
