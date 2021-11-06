@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    key = "modules/services/webserver-cluster/terraform.tfstate"
-    bucket = "uartf-backend"
-    region = "us-east-2"
-    encrypt = true
+    key            = "modules/services/webserver-cluster/terraform.tfstate"
+    bucket         = "uartf-backend"
+    region         = "us-east-2"
+    encrypt        = true
     dynamodb_table = "uartf-locks"
   }
 }
@@ -135,9 +135,9 @@ data "terraform_remote_state" "db" {
 
   config = {
     bucket = var.db_remote_state_bucket
-    key = var.db_remote_state_key
+    key    = var.db_remote_state_key
     region = "us-east-2"
-   }
+  }
 }
 
 data "template_file" "user_data" {
@@ -145,7 +145,7 @@ data "template_file" "user_data" {
 
   vars = {
     server_port = var.server_port
-    db_address = data.terraform_remote_state.db.outputs.address
-    db_port = data.terraform_remote_state.db.outputs.port
+    db_address  = data.terraform_remote_state.db.outputs.address
+    db_port     = data.terraform_remote_state.db.outputs.port
   }
 }
