@@ -13,6 +13,6 @@ resource "aws_db_instance" "database" {
   engine            = "mysql"
   instance_class    = var.db_instance
   name              = var.db_name
-  username          = "admin"
+  username          = var.db_username
   password          = var.db_password
 }

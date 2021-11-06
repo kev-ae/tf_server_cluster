@@ -18,3 +18,18 @@ variable "db_remote_state_key" {
   description = "The path for the database's remote state in s3"
   type        = string
 }
+
+variable "instance_type" {
+  description = "The instance type for the ec2 instances"
+  type        = string
+}
+
+variable "min_size" {
+  desciption = "The minimum size for the webserver cluster"
+  type       = number
+}
+
+variable "max_size" {
+  desciption = "The maximum size for the webserver cluster"
+  type       = number
+}

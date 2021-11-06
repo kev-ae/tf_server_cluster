@@ -18,4 +18,5 @@ module "mysql" {
   db_instance = "db.t2.micro"
   db_name     = "prod-backend"
   db_password = var.db_password
+  db_username = "admin"
 }
