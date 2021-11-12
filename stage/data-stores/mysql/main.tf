@@ -13,10 +13,10 @@ provider "aws" {
 }
 
 module "mysql" {
-  source = "../../modules/data-stores/mysql"
+  source = "../../../modules/data-stores/mysql"
 
   db_instance = "db.t2.micro"
-  db_name     = "stage-backend"
+  db_name     = "stagebackend"
   db_password = var.db_password
   db_username = "admin"
 }

@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "webserver_cluster" {
-  source = "../../modules/serives/webserver-cluster"
+  source = "../../../modules/serives/webserver-cluster"
 
   cluster_name           = "webservers-prod"
   db_remote_state_bucket = "uartf-backend"
