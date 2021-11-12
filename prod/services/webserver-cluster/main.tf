@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "webserver_cluster" {
-  source = "../../../modules/serives/webserver-cluster"
+  source = "github.com/kev-ae/tf_server_cluster_modules//services/webserver-cluster?ref=v0.0.1"
 
   cluster_name           = "webservers-prod"
   db_remote_state_bucket = "uartf-backend"
